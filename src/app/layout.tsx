@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Shared/Header/Header";
+import Footer from "@/components/Shared/Footer/Footer";
 
 // ✅ Local Bangla font setup
 const shurjo = localFont({
@@ -78,6 +79,7 @@ export default function RootLayout({
       <body className={`${shurjo.className} antialiased overflow-x-hidden`}>
         <Header/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
