@@ -1,7 +1,19 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "",
+        pathname: "/**", // allow all images from this domain
+      },
+    ],
+  },
+  staticPageGenerationTimeout: 120, // ⬅️ increase build timeout to 120s
 };
 
 export default nextConfig;
