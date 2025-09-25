@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import ExtraCategory from "./ExtraCategory";
 
 const categories = [
   { name: "সংবাদ", href: "/category/news" },
@@ -18,19 +19,20 @@ const categories = [
 
 const HeaderCategory = () => {
   return (
-    <nav className="bg-white shadow bg-site mobile-none">
+    <nav className="bg-site mobile-none shadow-md">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex space-x-6 justify-center">
           {categories.map((cat) => (
             <div key={cat.name} className="menu-border pe-6 py-3">
               <Link
                 href={cat.href}
-                className="text-white  transition-colors font-medium"
+                className="text-white transition-colors font-medium"
               >
                 {cat.name}
               </Link>
             </div>
           ))}
+          <ExtraCategory />
         </div>
       </div>
     </nav>

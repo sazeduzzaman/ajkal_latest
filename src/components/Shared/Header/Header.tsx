@@ -7,8 +7,10 @@ const Header = () => {
   return (
     <div>
       <Topbar />
-      <HeaderCenter />
-      <HeaderCategory />
+      <div className="sticky top-0 z-50 w-full">
+        <HeaderCenter />
+        <HeaderCategory />
+      </div>
     </div>
   );
 };
