@@ -1,8 +1,13 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { HiChevronDown } from "react-icons/hi";
+import { CategoryDataType } from "@/types/CategoryDataType";
 
-const ExtraCategory = () => {
+interface ExtraCategoryProps {
+  categories: CategoryDataType[];
+}
+
+const ExtraCategory: React.FC<ExtraCategoryProps> = ({ categories }) => {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -17,7 +22,8 @@ const ExtraCategory = () => {
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    return () =>
+      document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
@@ -27,7 +33,7 @@ const ExtraCategory = () => {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <span className="text-white flex items-center">
+      <span className="text-white flex items-center cursor-pointer">
         অন্যান্য <HiChevronDown className="ms-1" />
       </span>
 
@@ -36,22 +42,17 @@ const ExtraCategory = () => {
           open ? "block" : "hidden"
         }`}
       >
-        <li>
-          <a
-            onClick={() => setOpen(false)}
-            className="hover:bg-gray-200 rounded"
-          >
-            Item 1
-          </a>
-        </li>
-        <li>
-          <a
-            onClick={() => setOpen(false)}
-            className="hover:bg-gray-200 rounded"
-          >
-            Item 2
-          </a>
-        </li>
+        {categories.map((cat) => (
+          <li key={cat.id}>
+            <a
+              href={`/category/${cat.name.toLowerCase()}`}
+              onClick={() => setOpen(false)}
+              className="hover:bg-gray-200 rounded"
+            >
+              {cat.name_bangla}
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   );
