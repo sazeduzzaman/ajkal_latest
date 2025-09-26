@@ -11,7 +11,7 @@
   --color-white: #ffffff;
   --color-black: #000000;
   --color-red: #ff0000;
-  --font-main: 'Noto Sans Bengali', sans-serif;
+  --font-main: "Noto Sans Bengali", sans-serif;
 }
 
 /* Base Styles */
@@ -26,6 +26,7 @@ body {
   padding: 0;
   line-height: 1.5;
   font-family: var(--font-main);
+  color: #000000;
   font-size: 18px;
   overflow-x: hidden;
   overflow-y: scroll; /* ensures scrollbar always visible */
@@ -60,6 +61,32 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* Utility Classes */
+
+.post-header-title {
+  text-align: left;
+  background-image: linear-gradient(45deg, #165588, #ed1e2b 51%, #165588);
+  margin: auto;
+  position: relative;
+  font-size: 25px;
+  padding: 10px;
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  color: #fff;
+}
+.sidebar_bigapon_area {
+  background-image: url(https://st2.depositphotos.com/1014528/11870/v/450/depositphotos_118709216-stock-illustration-abstract-blue-waves-data-stream.jpg);
+}
+.sidebar_menu_icons {
+  background-color: #ed1e2b;
+  color: #eee;
+}
+.sidebar_menu_links {
+  background-color: #165588;
+  display: block;
+  color: #eee;
+  width: 80%;
+}
 .menu-border {
   border-right: 1px solid #eee;
 }

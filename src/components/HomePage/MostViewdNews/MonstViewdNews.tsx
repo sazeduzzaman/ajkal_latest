@@ -14,12 +14,12 @@ const MonstViewdNews: React.FC<CategoryNewsProps> = ({ items }) => {
   const fallbackImage = "/images/placeholder.webp";
 
   return (
-    <div className="mt-6">
-      <div className="flex items-center gap-3">
+    <div className="mt-3">
+      <div className="flex items-center gap-3 mt-3">
         <h1 className="text-2xl font-bold text-primary">সর্বাধিক পঠিত</h1>
-        <div className="flex-1 " style={{ border: "1px solid #e5e7eb" }}></div>
+        <div className="flex-1 border-t border-gray-300"></div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 p-4 px-0">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 p-4 px-0 mt-1">
         {mostViewdItems.map((item) => (
           <Link
             key={item.id}
