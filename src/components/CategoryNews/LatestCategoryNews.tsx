@@ -1,0 +1,41 @@
+import { NewsItem } from "@/types/CategoryDataType";
+import React from "react";
+
+interface CategoryNewsProps {
+  items: NewsItem[];
+}
+
+const LatestCategoryNews: React.FC<CategoryNewsProps> = ({ items }) => {
+  const displayItems = items.slice(0, 5);
+
+  const fallbackImage = "/images/placeholder.webp"; // your local placeholder
+
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
+      {displayItems.map((news) => (
+        <div
+          key={news.id}
+          className="relative h-70 rounded overflow-hidden group cursor-pointer shadow-lg"
+        >
+          {/* Background Image with fallback */}
+          <div
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+            style={{
+              backgroundImage: `url(https://ajkal.us/img/news/${news.title_img}), url(${fallbackImage})`,
+            }}
+          ></div>
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+
+          {/* Title */}
+          <div className="absolute bottom-0 p-2 text-white text-lg">
+            {news.news_title}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default LatestCategoryNews;

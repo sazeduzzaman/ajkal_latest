@@ -228,11 +228,11 @@ const NotFound = () => {
             height={16}
             fill="currentColor"
           />
-          <circle cx="316.60911" cy={538} r={79} fill="#2f2e41" />
-          <rect x="280.60911" y={600} width={24} height={43} fill="#2f2e41" />
-          <rect x="328.60911" y={600} width={24} height={43} fill="#2f2e41" />
-          <ellipse cx="300.60911" cy="643.5" rx={20} ry="7.5" fill="#2f2e41" />
-          <ellipse cx="348.60911" cy="642.5" rx={20} ry="7.5" fill="#2f2e41" />
+          <circle cx="316.60911" cy={538} r={79} fill="#FF0000" />
+          <rect x="280.60911" y={600} width={24} height={43} fill="#FF0000" />
+          <rect x="328.60911" y={600} width={24} height={43} fill="#FF0000" />
+          <ellipse cx="300.60911" cy="643.5" rx={20} ry="7.5" fill="#FF0000" />
+          <ellipse cx="348.60911" cy="642.5" rx={20} ry="7.5" fill="#FF0000" />
           <circle cx="318.60911" cy={518} r={27} fill="#fff" />
           <circle cx="318.60911" cy={518} r={9} fill="#3f3d56" />
           <path
@@ -246,7 +246,7 @@ const NotFound = () => {
             rx="39.5"
             ry="12.40027"
             transform="translate(-238.28665 112.98044) rotate(-23.17116)"
-            fill="#2f2e41"
+            fill="#FF0000"
           />
           <ellipse
             cx="269.21511"
@@ -254,7 +254,7 @@ const NotFound = () => {
             rx="39.5"
             ry="12.40027"
             transform="translate(-271.07969 59.02084) rotate(-23.17116)"
-            fill="#2f2e41"
+            fill="#FF0000"
           />
           <path
             d="M394,661.5c0,7.732-19.90861,23-42,23s-43-14.268-43-22,20.90861-6,43-6S394,653.768,394,661.5Z"
@@ -267,7 +267,8 @@ const NotFound = () => {
             ৪০৪ পাওয়া যায়নি
           </p>
           <p className="md:text-lg xl:text-xl text-gray-500 mt-4 text-center">
-            উফ! আমাদের সার্ভারে কিছু সমস্যা হয়েছে <br/> কিন্তু আমরা আপনাকে সাহায্য করতে এখানে আছি!
+            উফ! আমাদের সার্ভারে কিছু সমস্যা হয়েছে <br /> কিন্তু আমরা আপনাকে
+            সাহায্য করতে এখানে আছি!
           </p>
           <div className="mt-6">
             <Link href="/" className="btn btn-active">
