@@ -51,7 +51,7 @@ const BreakingNews: React.FC<CategoryNewsProps> = ({ items }) => {
                   </h3>
 
                   {/* Short description */}
-                  <p className="text-sm text-gray-700 mb-2 line-clamp-2">
+                  <p className="text-lg text-gray-700 mb-2 line-clamp-2">
                     {item.news_short_brief || ""}
                   </p>
 

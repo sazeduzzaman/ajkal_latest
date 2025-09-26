@@ -13,7 +13,7 @@ const Footer = () => {
     <footer className="bg-black text-white">
       {/* Top Logo */}
       <div className="bg-site">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto text-center">
           <Image
             src="/images/logo_red.webp"
             alt="সাপ্তাহিক আজকাল || Logo"
@@ -26,7 +26,7 @@ const Footer = () => {
       </div>
 
       {/* Main Footer Grid */}
-      <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
+      <div className="max-w-7xl mx-auto py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
         {/* Column 1 */}
         <div>
           <ul className="space-y-2">
@@ -41,12 +41,18 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/category/entertainment" className="text-lg hover:underline">
+              <Link
+                href="/category/entertainment"
+                className="text-lg hover:underline"
+              >
                 বিনোদন
               </Link>
             </li>
             <li>
-              <Link href="/category/technology" className="text-lg hover:underline">
+              <Link
+                href="/category/technology"
+                className="text-lg hover:underline"
+              >
                 প্রযুক্তি
               </Link>
             </li>
@@ -67,12 +73,18 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/category/entertainment" className="text-lg hover:underline">
+              <Link
+                href="/category/entertainment"
+                className="text-lg hover:underline"
+              >
                 বিনোদন
               </Link>
             </li>
             <li>
-              <Link href="/category/technology" className="text-lg hover:underline">
+              <Link
+                href="/category/technology"
+                className="text-lg hover:underline"
+              >
                 প্রযুক্তি
               </Link>
             </li>
@@ -93,7 +105,10 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/advertisement-pricing" className="text-lg hover:underline">
+              <Link
+                href="/advertisement-pricing"
+                className="text-lg hover:underline"
+              >
                 বিজ্ঞাপনের মূল্য
               </Link>
             </li>
@@ -139,27 +154,33 @@ const Footer = () => {
             alt="Play Store"
             width={160}
             height={160}
-            className="rounded"
+            className="rounded-0"
           />
           <Image
             src="/images/applestore.png"
             alt="Apple Store"
             width={160}
             height={160}
-            className="rounded"
+            className="rounded-0"
           />
         </div>
       </div>
 
       {/* Publisher & Social Media */}
-      <div className="max-w-7xl mx-auto px-4 mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
+      <div className="max-w-7xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
         {/* Publisher */}
         <div>
           <h2 className="text-3xl mb-5">সম্পাদক ও প্রকাশক: শাহ্‌ নেওয়াজ</h2>
           <p>ফোন: +১৬৪৬ ২৬৭-৭৭৫১, ফ্যাক্স: ৭১৮-৮৬৫-৯১৩০</p>
-          <p>ঠিকানাঃ ৭১-১৬ ৩৫ অ্যাভিনিউ, জ্যাকসন হাইটস, নিউ ইয়র্ক ১১৩৭২, মার্কিন যুক্তরাষ্ট্র</p>
+          <p>
+            ঠিকানাঃ ৭১-১৬ ৩৫ অ্যাভিনিউ, জ্যাকসন হাইটস, নিউ ইয়র্ক ১১৩৭২, মার্কিন
+            যুক্তরাষ্ট্র
+          </p>
           <p>ইমেইল: ajkalnews@gmail.com , editor@ajkalusa.com</p>
-          <p>কপিরাইট © {currentYearBangla} সাপ্তাহিক আজকাল কর্তৃক সর্বস্বত্ব ® সংরক্ষিত</p>
+          <p>
+            কপিরাইট © {currentYearBangla} সাপ্তাহিক আজকাল কর্তৃক সর্বস্বত্ব ®
+            সংরক্ষিত
+          </p>
         </div>
 
         {/* Social Media */}
@@ -171,13 +192,18 @@ const Footer = () => {
 
       {/* Legal & Developed By */}
       <div className="bg-red-500 mt-10">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-3 text-white">
+        <div className="max-w-7xl mx-auto py-4 flex flex-col sm:flex-row justify-between items-center gap-3 text-white">
           <p className="text-sm">
-            এই ওয়েবসাইটের কোনো লেখা, ছবি, অডিও, ভিডিও অনুমতি ছাড়া ব্যবহার বেআইনি।
+            এই ওয়েবসাইটের কোনো লেখা, ছবি, অডিও, ভিডিও অনুমতি ছাড়া ব্যবহার
+            বেআইনি।
           </p>
           <div className="flex items-center gap-2">
             <p className="text-sm">Developed With Love By</p>
-            <Link href="https://flixza.com" target="_blank" rel="noopener noreferrer">
+            <Link
+              href="https://flixza.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image
                 src="https://control.ajkal.us/flixzaglobal.webp"
                 width={60}
