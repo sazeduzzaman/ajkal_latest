@@ -3,51 +3,63 @@
 import React from "react";
 import { BsShare } from "react-icons/bs";
 import { FaRegCopy } from "react-icons/fa";
+import {
+  MdOutlineTextIncrease,
+  MdOutlineTextDecrease,
+  MdTextFormat,
+} from "react-icons/md";
 import toast from "react-hot-toast";
-import MemoizedShareNews from "@/components/ShareNews/ShareNews";
+import ShareNews from "./ShareNews";
 
 interface ShareToolbarProps {
   title: string;
   slug: string;
   category?: string;
-  fontSize?: number;
+  fontSize: number;
   handlePrint: () => void;
+  increaseFont?: () => void;
+  decreaseFont?: () => void;
+  resetFont?: () => void;
 }
 
 const ShareToolbar: React.FC<ShareToolbarProps> = ({
   title,
   slug,
-  category = "uncategory",
-  fontSize = 16,
+  category,
+  fontSize,
   handlePrint,
 }) => {
-  const link = `https://weeklyinqilab.com/details/${category}/${slug}`;
-
-  const copyLink = () => {
-    navigator.clipboard
-      .writeText(link)
-      .then(() => toast.success("✅ লিংক কপি হয়েছে!"))
-      .catch(() => toast.error("❌ লিংক কপি করা যায়নি"));
-  };
+  const link = `https://weeklyinqilab.com/details/${
+    category ?? "uncategory"
+  }/${slug}`;
 
   return (
     <div
-      className="flex flex-col items-center sm:flex-row sm:items-center sm:gap-2 text-gray-500"
+      className="flex flex-col items-center sm:flex-row sm:items-center sm:gap-3 text-gray-500"
       style={{ fontSize: `${fontSize * 0.85}px` }}
     >
-      <span className="mb-3 sm:mb-0">নিউজটি শেয়ার করুন:</span>
-      <div className="flex items-center gap-2">
-        <BsShare className="text-red-500" size={fontSize * 0.9} />
+      <span className="mb-2 sm:mb-0 font-medium">নিউজটি শেয়ার করুন:</span>
 
+      <div className="flex items-center gap-2">
+        {/* Social Share */}
+        <ShareNews url={link} title={title} />
+
+        {/* Copy Link */}
         <button
           title="লিংক কপি করুন"
-          onClick={copyLink}
+          onClick={() => {
+            navigator.clipboard
+              .writeText(link)
+              .then(() => toast.success("✅ লিংক কপি হয়েছে!"))
+              .catch(() => toast.error("❌ লিংক কপি করা যায়নি"));
+          }}
           className="btn btn-circle btn-sm"
           style={{ fontSize: `${fontSize * 0.85}px` }}
         >
           <FaRegCopy size={fontSize * 0.9} />
         </button>
 
+        {/* Print */}
         <button
           title="প্রিন্ট করুন"
           onClick={handlePrint}
@@ -56,8 +68,6 @@ const ShareToolbar: React.FC<ShareToolbarProps> = ({
         >
           🖨️
         </button>
-
-        <MemoizedShareNews title={title} url={link} />
       </div>
     </div>
   );

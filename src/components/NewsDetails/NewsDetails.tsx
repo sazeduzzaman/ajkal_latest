@@ -9,6 +9,7 @@ import {
   MdOutlineTextDecrease,
 } from "react-icons/md";
 import FontSizeController from "@/utils/FontSizeController/FontSizeController";
+import ShareToolbar from "@/utils/ShareToolbar/ShareToolbar";
 
 interface NewsDetailItem {
   id: number;
@@ -19,6 +20,7 @@ interface NewsDetailItem {
   news_time: string;
   news_short_brief: string;
   news_author: string;
+  category_name: string;
 }
 
 interface NewsDetailsProps {
@@ -32,6 +34,15 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ item }) => {
   const increaseFont = () => setFontSize((prev) => Math.min(prev + 2, 32));
   const decreaseFont = () => setFontSize((prev) => Math.max(prev - 2, 12));
   const resetFont = () => setFontSize(18);
+
+  const handlePrint = () => {
+    if (!newsRef.current) return;
+    const printContents = newsRef.current.innerHTML;
+    const originalContents = document.body.innerHTML;
+    document.body.innerHTML = printContents;
+    window.print();
+    document.body.innerHTML = originalContents;
+  };
 
   return (
     <div className="container mx-auto mt-5">
@@ -75,35 +86,13 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ item }) => {
                 <span className="mb-2 sm:mb-0 font-medium">
                   নিউজটি শেয়ার করুন:
                 </span>
-                <div className="flex gap-3 text-2xl justify-center">
-                  <a
-                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-                      window.location.href
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fa-brands fa-facebook"></i>
-                  </a>
-                  <a
-                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
-                      window.location.href
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fa-brands fa-twitter"></i>
-                  </a>
-                  <a
-                    href={`https://www.linkedin.com/shareArticle?url=${encodeURIComponent(
-                      window.location.href
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fa-brands fa-linkedin"></i>
-                  </a>
-                </div>
+                <ShareToolbar
+                  title={item.news_title ?? "No Title"}
+                  slug={item.category_name_bangla ?? "No Slug"}
+                  category={item.category_name}
+                  fontSize={fontSize}
+                  handlePrint={handlePrint}
+                />
               </div>
             </div>
           </div>
