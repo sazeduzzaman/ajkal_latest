@@ -46,7 +46,7 @@ const ExtraCategory: React.FC<ExtraCategoryProps> = ({ categories }) => {
             <Link
               href={`/category/${cat.id}`}
               onClick={() => setOpen(false)}
-              className="text-black hover:bg-gray-200 rounded"
+              className="text-black hover:bg-gray-200"
             >
               {cat.name_bangla}
             </Link>

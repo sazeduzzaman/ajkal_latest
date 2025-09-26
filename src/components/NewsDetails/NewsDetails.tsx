@@ -107,7 +107,7 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ item }) => {
             <img
               src={`https://ajkal.us/img/news/${item?.title_img}`}
               alt={item?.news_title}
-              className="w-full h-auto mb-4 rounded-[5px]"
+              className="w-full h-auto mb-4"
             />
           </div>
           {/* Author & Font Size Icons */}

@@ -60,12 +60,12 @@ export default async function Page({ params }: { params: { id: string } }) {
 
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="mt-4 mb-4 border-b flex flex-col md:flex-row justify-between">
-        <p className="font-semibold text-xl">
+      <div className="mt-4 mb-4 border-b border-gray-300 flex flex-col md:flex-row justify-between">
+        <p className="font-semibold text-black text-xl">
           {categoryName ?? "অনির্ধারিত"} নিউজ
         </p>
         <CurrentTimeShower />
-      </div>
+      </div>  
 
       {categoryItems.length > 0 ? (
         <CategoryNews items={categoryItems} />

@@ -37,8 +37,8 @@ const HeroSection: React.FC<CategoryNewsProps> = ({ items }) => {
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
 
-        <div className="absolute bottom-4 left-4 z-10 bg-black/0 p-2 md:p-4 rounded">
-          <h2 className="text-lg md:text-4xl font-bold">
+        <div className="absolute bottom-4 left-4 z-10 bg-black/0 p-2 px-3 md:p-4">
+          <h2 className="text-xl md:text-4xl font-bold">
             {mainItem.news_title}
           </h2>
           <small className="text-sm md:text-sm">
@@ -68,7 +68,7 @@ const HeroSection: React.FC<CategoryNewsProps> = ({ items }) => {
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
 
-            <div className="absolute bottom-0 left-0 z-10 bg-black/0 p-2 rounded">
+            <div className="absolute bottom-0 left-0 z-10 bg-black/0 p-4 px-4">
               <h3 className="text-sm md:text-lg font-semibold">
                 {item.news_title}
               </h3>

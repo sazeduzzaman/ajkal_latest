@@ -12,19 +12,22 @@ const BreakingNews: React.FC<CategoryNewsProps> = ({ items }) => {
 
   const fallbackImage = "/images/placeholder.webp";
   return (
-    <div className="my-6">
+    <div className="my-6 mt-8">
       <div className="grid grid-cols-12 gap-2">
         <div className="col-span-12">
           <div className="flex items-center gap-3">
             <h1 className="text-2xl font-bold text-primary">বিশেষ প্রতিবেদন</h1>
-            <div className="flex-1 border-1 border-t border-gray-300"></div>
+            <div
+              className="flex-1 "
+              style={{ border: "1px solid #e5e7eb" }}
+            ></div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-6">
             {breakingNewsItems.map((item) => (
               <Link
                 key={item.id}
                 href={`/category/${item.category_id}/news/${item.id}`}
-                className="group flex flex-col overflow-hidden bg-transparent border border-gray-200 rounded"
+                className="group flex flex-col overflow-hidden bg-transparent border border-gray-200"
               >
                 {/* Image */}
                 <div className="relative h-48 sm:h-56 lg:h-50 w-full">
@@ -43,7 +46,7 @@ const BreakingNews: React.FC<CategoryNewsProps> = ({ items }) => {
                 {/* Content */}
                 <div className="flex flex-col flex-1 justify-between p-3">
                   {/* Title */}
-                  <h3 className="text-md mb-1 text-black font-semibold">
+                  <h3 className="text-xl mb-1 text-black font-semibold">
                     {item.news_title}
                   </h3>
 
