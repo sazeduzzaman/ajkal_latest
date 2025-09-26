@@ -2,9 +2,9 @@
 import { fetcher } from "@/lib/fetcher";
 import { ApiResponse, CategoryDataType } from "@/types/CategoryDataType";
 
-export async function getmoSpotlightNewsData(): Promise<CategoryDataType[]> {
+export async function getmostViewdNewsData(): Promise<CategoryDataType[]> {
   const res = await fetcher<ApiResponse<CategoryDataType[]>>(
-    "https://backoffice.ajkal.us/spotlight-news",
+    "https://backoffice.ajkal.us/viewed-news",
     { revalidate: 1 } // update every minute
   );
 

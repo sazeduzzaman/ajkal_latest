@@ -14,7 +14,10 @@ const ExtraCategory: React.FC<ExtraCategoryProps> = ({ categories }) => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setOpen(false);
       }
     };
@@ -40,7 +43,11 @@ const ExtraCategory: React.FC<ExtraCategoryProps> = ({ categories }) => {
       >
         {categories.map((cat) => (
           <li key={cat.id}>
-            <Link href={`/category/${cat.id}`} onClick={() => setOpen(false)} className="hover:bg-gray-200 rounded">
+            <Link
+              href={`/category/${cat.id}`}
+              onClick={() => setOpen(false)}
+              className="text-black hover:bg-gray-200 rounded"
+            >
               {cat.name_bangla}
             </Link>
           </li>

@@ -26,14 +26,14 @@ const HeaderCenter = () => {
                 alt="Advertisement"
                 width={950}
                 height={60}
-                className="rounded-[5px] w-full object-contain"
+                className=" w-full object-contain"
                 priority
               />
             </div>
             <div>
               <Link
                 href="/epaper"
-                className="btn btn-info bg-site border-0 text-white h-21 rounded-[5px] px-3"
+                className="btn btn-info bg-site border-0 text-white h-21  px-3"
               >
                 <IoIosSearch className="" size={30} />
               </Link>

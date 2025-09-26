@@ -2,6 +2,7 @@ import { NewsItem } from "@/types/CategoryDataType";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import NewsTimeShower from "@/utils/NewsTimeShower/NewsTimeShower";
 
 interface CategoryNewsProps {
   items: NewsItem[];
@@ -16,11 +17,11 @@ const HeroSection: React.FC<CategoryNewsProps> = ({ items }) => {
   const sideItems = items.slice(1, 5);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 p-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-4 px-0">
       {/* Left Big Card */}
       <Link
         href={`/category/${mainItem.category_id}/news/${mainItem.id}`}
-        className="group md:col-span-2 relative h-[300px] md:h-[465px] flex items-end overflow-hidden rounded-[5px]"
+        className="group md:col-span-1 relative h-[300px] md:h-[465px] flex items-end overflow-hidden"
       >
         <Image
           src={
@@ -37,9 +38,12 @@ const HeroSection: React.FC<CategoryNewsProps> = ({ items }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
 
         <div className="absolute bottom-4 left-4 z-10 bg-black/0 p-2 md:p-4 rounded">
-          <h2 className="text-lg md:text-2xl font-bold">
+          <h2 className="text-lg md:text-4xl font-bold">
             {mainItem.news_title}
           </h2>
+          <small className="text-sm md:text-sm">
+            <NewsTimeShower newsTime={mainItem.news_time} />
+          </small>
         </div>
       </Link>
 
@@ -49,7 +53,7 @@ const HeroSection: React.FC<CategoryNewsProps> = ({ items }) => {
           <Link
             key={item.id ?? index}
             href={`/category/${item.category_id}/news/${item.id}`}
-            className="group relative w-full h-[180px] sm:h-[228px] overflow-hidden rounded-[5px]"
+            className="group relative w-full h-[180px] sm:h-[228px] overflow-hidden"
           >
             <Image
               src={
