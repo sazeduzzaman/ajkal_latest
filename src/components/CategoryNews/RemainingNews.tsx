@@ -7,15 +7,21 @@ interface CategoryNewsProps {
   items: NewsItem[];
 }
 
-const RemainingNews: React.FC<CategoryNewsProps> = ({ items }) => {
+const RemainingNews: React.FC<CategoryNewsProps> =  ({ items }) => {
   const fallbackImage = "/images/placeholder.webp"; // local placeholder
-
   return (
-    <div className="space-y-6 mt-20">
+    <div className="space-y-6 mt-15">
+      <div className="flex items-center gap-3">
+        <h1 className="text-2xl font-bold text-primary">
+          {items?.[0]?.category_name_bangla || "অন্যান্য সংবাদ"} এর আরও সংবাদ ।
+        </h1>
+        <div className="flex-1 border-1 border-t border-gray-300"></div>
+      </div>
+
       {items.map((news) => (
         <div
           key={news.id}
-          className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center border-b pb-4"
+          className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center border-b pb-4 border-gray-300"
         >
           {/* Left Side - Square Image */}
           <div className="md:col-span-4 w-100 h-50 aspect-square relative overflow-hidden rounded">
@@ -33,7 +39,7 @@ const RemainingNews: React.FC<CategoryNewsProps> = ({ items }) => {
 
           {/* Right Side - Text */}
           <div className="md:col-span-8 flex flex-col justify-center h-full">
-            <h2 className="font-bold text-2xl lg:text-3xl leading-snug md:leading-tight line-clamp-3">
+            <h2 className="font-bold text-primary text-2xl lg:text-3xl leading-snug md:leading-tight">
               {news.news_title}
             </h2>
             <div
@@ -42,8 +48,9 @@ const RemainingNews: React.FC<CategoryNewsProps> = ({ items }) => {
                 __html: news.news_short_brief ?? "",
               }}
             />
-            <p className="text-sm text-gray-400 mt-1">
-              {news.category_name_bangla} |{" "}
+            <p className="text-sm text-black mt-5">
+              <span className="text-red-500">{news.category_name_bangla}</span>{" "}
+              <span className="px-1">|</span>
               <NewsTimeShower newsTime={news.news_time} />
             </p>
           </div>

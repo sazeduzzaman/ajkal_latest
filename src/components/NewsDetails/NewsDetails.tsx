@@ -13,6 +13,7 @@ import ShareToolbar from "@/utils/ShareToolbar/ShareToolbar";
 
 interface NewsDetailItem {
   id: number;
+  category_id: string;
   news_title: string;
   news_detail: string;
   title_img: string;
@@ -35,17 +36,17 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ item }) => {
   const decreaseFont = () => setFontSize((prev) => Math.max(prev - 2, 12));
   const resetFont = () => setFontSize(18);
 
-  const handlePrint = () => {
-    if (!newsRef.current) return;
-    const printContents = newsRef.current.innerHTML;
-    const originalContents = document.body.innerHTML;
-    document.body.innerHTML = printContents;
-    window.print();
-    document.body.innerHTML = originalContents;
-  };
+  // const handlePrint = () => {
+  //   if (!newsRef.current) return;
+  //   const printContents = newsRef.current.innerHTML;
+  //   const originalContents = document.body.innerHTML;
+  //   document.body.innerHTML = printContents;
+  //   window.print();
+  //   document.body.innerHTML = originalContents;
+  // };
 
   return (
-    <div className="container mx-auto mt-5">
+    <div className="max-w-7xl mx-auto mt-5">
       {/* Category */}
       <div className="flex items-center mb-2">
         <h1 className="text-xl text-gray-600 flex items-center underline line-clamp-2">
@@ -58,7 +59,7 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ item }) => {
           {/* Title */}
           <h1
             className="text-black font-semibold my-4"
-            style={{ fontSize: `${fontSize * 1.8}px`, lineHeight: 1.3 }}
+            style={{ fontSize: `${fontSize * 2.5}px`, lineHeight: 1.3 }}
           >
             {item?.news_title}
           </h1>
@@ -74,8 +75,8 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ item }) => {
                   </small>
                 </div>
                 <div>
-                  <span className="font-medium text-gray-700">প্রকাশিত:</span>
-                  <p className="text-gray-500 mt-1">
+                  <span className="font-medium text-black">প্রকাশিত:</span>
+                  <p className="text-red-500 mb-0">
                     <NewsTimeShower newsTime={item.news_time} />
                   </p>
                 </div>
@@ -83,15 +84,11 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ item }) => {
 
               {/* Share */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2 text-gray-500 text-sm">
-                <span className="mb-2 sm:mb-0 font-medium">
-                  নিউজটি শেয়ার করুন:
-                </span>
                 <ShareToolbar
                   title={item.news_title ?? "No Title"}
-                  slug={item.category_name_bangla ?? "No Slug"}
-                  category={item.category_name}
-                  fontSize={fontSize}
-                  handlePrint={handlePrint}
+                  slug={item.id?.toString() ?? "0"} // use `slug` prop instead of `id`
+                  category={item.category_id}
+                  // handlePrint={handlePrint}
                 />
               </div>
             </div>

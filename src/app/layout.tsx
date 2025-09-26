@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 import Header from "@/components/Shared/Header/Header";
 import Footer from "@/components/Shared/Footer/Footer";
 
@@ -77,6 +78,7 @@ export default function RootLayout({
   return (
     <html lang="bn">
       <body className={`${shurjo.className} antialiased overflow-x-hidden`}>
+        <Toaster position="top-center" reverseOrder={false} />
         <Header/>
         {children}
         <Footer/>
