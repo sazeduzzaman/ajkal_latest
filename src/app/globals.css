@@ -26,7 +26,6 @@ body {
   padding: 0;
   line-height: 1.5;
   font-family: var(--font-main);
-  color: var(--color-primary);
   font-size: 18px;
   overflow-x: hidden;
   overflow-y: scroll; /* ensures scrollbar always visible */

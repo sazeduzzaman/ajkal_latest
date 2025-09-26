@@ -1,4 +1,5 @@
 import { NewsItem } from "@/types/CategoryDataType";
+import Link from "next/link";
 import React from "react";
 
 interface CategoryNewsProps {
@@ -17,21 +18,23 @@ const LatestCategoryNews: React.FC<CategoryNewsProps> = ({ items }) => {
           key={news.id}
           className="relative h-70 rounded overflow-hidden group cursor-pointer shadow-lg"
         >
-          {/* Background Image with fallback */}
-          <div
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-            style={{
-              backgroundImage: `url(https://ajkal.us/img/news/${news.title_img}), url(${fallbackImage})`,
-            }}
-          ></div>
+          <Link href={`/category/${news.category_id}/news/${news.id}`}>
+            {/* Background Image with fallback */}
+            <div
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+              style={{
+                backgroundImage: `url(https://ajkal.us/img/news/${news.title_img}), url(${fallbackImage})`,
+              }}
+            ></div>
 
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
 
-          {/* Title */}
-          <div className="absolute bottom-0 p-2 text-white text-lg">
-            {news.news_title}
-          </div>
+            {/* Title */}
+            <div className="absolute bottom-0 p-2 text-white text-lg">
+              {news.news_title}
+            </div>
+          </Link>
         </div>
       ))}
     </div>

@@ -19,6 +19,7 @@ export interface ApiResponse<T> {
 
 export interface NewsItem {
   id: number;
+  category_id: number;
   title: string;
   news_title: string;
   is_featured: number;
