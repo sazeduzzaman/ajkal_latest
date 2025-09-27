@@ -3,30 +3,13 @@
 import React, { useState, useRef } from "react";
 import NewsTimeShower from "@/utils/NewsTimeShower/NewsTimeShower";
 import Link from "next/link";
-import {
-  MdTextFormat,
-  MdOutlineTextIncrease,
-  MdOutlineTextDecrease,
-} from "react-icons/md";
 import FontSizeController from "@/utils/FontSizeController/FontSizeController";
 import ShareToolbar from "@/utils/ShareToolbar/ShareToolbar";
 import CommonSidebar from "../CommonSidebar/CommonSidebar";
-
-interface NewsDetailItem {
-  id: number;
-  category_id: string;
-  news_title: string;
-  news_detail: string;
-  title_img: string;
-  category_name_bangla: string;
-  news_time: string;
-  news_short_brief: string;
-  news_author: string;
-  category_name: string;
-}
+import { NewsItem } from "@/types/CategoryDataType";
 
 interface NewsDetailsProps {
-  item: NewsDetailItem;
+  item: NewsItem;
 }
 
 const NewsDetails: React.FC<NewsDetailsProps> = ({ item }) => {
@@ -36,15 +19,6 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ item }) => {
   const increaseFont = () => setFontSize((prev) => Math.min(prev + 2, 32));
   const decreaseFont = () => setFontSize((prev) => Math.max(prev - 2, 12));
   const resetFont = () => setFontSize(18);
-
-  // const handlePrint = () => {
-  //   if (!newsRef.current) return;
-  //   const printContents = newsRef.current.innerHTML;
-  //   const originalContents = document.body.innerHTML;
-  //   document.body.innerHTML = printContents;
-  //   window.print();
-  //   document.body.innerHTML = originalContents;
-  // };
 
   return (
     <div className="max-w-7xl mx-auto">
@@ -85,10 +59,9 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ item }) => {
               {/* Share */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2 text-gray-500 text-sm">
                 <ShareToolbar
-                  title={item.news_title ?? "No Title"}
-                  slug={item.id?.toString() ?? "0"} // use `slug` prop instead of `id`
-                  category={item.category_id}
-                  // handlePrint={handlePrint}
+                  title={item.news_title || "No Title"}
+                  slug={item.id?.toString() || "0"} // already string
+                  category={item.category_id?.toString() || "0"} // convert number to string
                 />
               </div>
             </div>

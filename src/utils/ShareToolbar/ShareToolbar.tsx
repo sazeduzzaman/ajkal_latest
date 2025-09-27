@@ -13,9 +13,9 @@ import {
 } from "react-share";
 
 interface ShareToolbarProps {
-  title: string;
+  title: string | undefined;
   slug: string;
-  category?: string;
+  category?: string | undefined;
   handlePrint?: () => void;
 }
 
