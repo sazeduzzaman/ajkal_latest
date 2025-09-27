@@ -20,7 +20,7 @@ const HeroSection: React.FC<CategoryNewsProps> = ({ items }) => {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-4 px-0">
       {/* Left Big Card */}
       <Link
-        href={`/category/${mainItem.category_id}/news/${mainItem.id}`}
+        href={`/${mainItem.category_name}/${mainItem.category_id}/news/${mainItem.id}`}
         className="group md:col-span-1 relative h-[300px] md:h-[465px] flex items-end overflow-hidden"
       >
         <Image
@@ -52,7 +52,7 @@ const HeroSection: React.FC<CategoryNewsProps> = ({ items }) => {
         {sideItems.map((item, index) => (
           <Link
             key={item.id ?? index}
-            href={`/category/${item.category_id}/news/${item.id}`}
+            href={`/${item.category_name}/${item.category_id}/news/${item.id}`}
             className="group relative w-full h-[180px] sm:h-[228px] overflow-hidden"
           >
             <Image
@@ -69,9 +69,7 @@ const HeroSection: React.FC<CategoryNewsProps> = ({ items }) => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
 
             <div className="absolute bottom-0 left-0 z-10 bg-black/0 p-4 px-4 text-white">
-              <h3 className="text-sm md:text-xl">
-                {item.news_title}
-              </h3>
+              <h3 className="text-sm md:text-xl">{item.news_title}</h3>
             </div>
           </Link>
         ))}

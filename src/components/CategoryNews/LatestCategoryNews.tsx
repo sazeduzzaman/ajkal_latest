@@ -20,7 +20,7 @@ const LatestCategoryNews: React.FC<CategoryNewsProps> = ({ items }) => {
       {firstItem && (
         <div className="relative h-[400px] overflow-hidden group cursor-pointer shadow-lg">
           <Link
-            href={`/category/${firstItem.category_id}/news/${firstItem.id}`}
+            href={`/${firstItem.category_name}/${firstItem.category_id}/news/${firstItem.id}`}
           >
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
@@ -47,7 +47,9 @@ const LatestCategoryNews: React.FC<CategoryNewsProps> = ({ items }) => {
             key={news.id}
             className="relative h-[196px] overflow-hidden group cursor-pointer shadow"
           >
-            <Link href={`/category/${news.category_id}/news/${news.id}`}>
+            <Link
+              href={`/${news.category_name}/${news.category_id}/news/${news.id}`}
+            >
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
                 style={{

@@ -16,9 +16,19 @@ const SportsNews: React.FC<CategoryNewsProps> = ({ items }) => {
 
   return (
     <div>
-      <div className="flex items-center gap-3 mt-6">
-        <h1 className="text-2xl font-bold text-primary">{newsItems?.[0]?.category_name_bangla || "অন্যান্য সংবাদ"}</h1>
+      <div className="flex items-center gap-3 mb-3 mt-5">
+        <h1 className="text-2xl font-bold text-primary">
+          {newsItems?.[0]?.category_name_bangla || "অন্যান্য সংবাদ"}
+        </h1>
         <div className="flex-1 border-t border-gray-300"></div>
+        <a
+          href={`/${newsItems?.[0]?.category_name || ""}/${
+            items?.[0]?.id || ""
+          }`}
+          className="text-primary font-semibold hover:underline"
+        >
+          আরও দেখুন
+        </a>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mt-6">
@@ -27,7 +37,7 @@ const SportsNews: React.FC<CategoryNewsProps> = ({ items }) => {
           {firstColumn.map((item) => (
             <Link
               key={item.id}
-              href={`/category/${item.category_id}/news/${item.id}`}
+              href={`/${item.category_name}/${item.category_id}/news/${item.id}`}
               className="group flex flex-col overflow-hidden bg-white border border-gray-200 flex-1"
             >
               <div className="relative h-46 w-full">
@@ -43,9 +53,7 @@ const SportsNews: React.FC<CategoryNewsProps> = ({ items }) => {
                 />
               </div>
               <div className="flex flex-col p-3 flex-1 justify-between">
-                <h3 className="text-xl mb-1  text-black">
-                  {item.news_title}
-                </h3>
+                <h3 className="text-xl mb-1  text-black">{item.news_title}</h3>
                 <p className="text-xs text-gray-500 mt-auto">
                   {item.category_name_bangla || "Category"}
                 </p>
@@ -59,7 +67,7 @@ const SportsNews: React.FC<CategoryNewsProps> = ({ items }) => {
           {middleColumn.map((item) => (
             <Link
               key={item.id}
-              href={`/category/${item.category_id}/news/${item.id}`}
+              href={`/${item.category_name}/${item.category_id}/news/${item.id}`}
               className="group flex flex-col overflow-hidden bg-white border border-gray-200 flex-1"
             >
               <div className="relative h-[calc(3*10rem+2*1rem)] w-full">
@@ -76,9 +84,7 @@ const SportsNews: React.FC<CategoryNewsProps> = ({ items }) => {
                 />
               </div>
               <div className="flex flex-col p-3 flex-1 justify-between">
-                <h3 className="text-2xl mb-1 text-black">
-                  {item.news_title}
-                </h3>
+                <h3 className="text-2xl mb-1 text-black">{item.news_title}</h3>
                 <p className="text-xs text-gray-500 mt-auto">
                   {item.category_name_bangla || "Category"}
                 </p>
@@ -92,7 +98,7 @@ const SportsNews: React.FC<CategoryNewsProps> = ({ items }) => {
           {lastColumn.map((item) => (
             <Link
               key={item.id}
-              href={`/category/${item.category_id}/news/${item.id}`}
+              href={`/${item.category_name}/${item.category_id}/news/${item.id}`}
               className="group flex flex-col overflow-hidden bg-white border border-gray-200 flex-1"
             >
               <div className="relative h-46 w-full">
@@ -108,9 +114,7 @@ const SportsNews: React.FC<CategoryNewsProps> = ({ items }) => {
                 />
               </div>
               <div className="flex flex-col p-3 flex-1 justify-between">
-                <h3 className="text-xl mb-1 text-black">
-                  {item.news_title}
-                </h3>
+                <h3 className="text-xl mb-1 text-black">{item.news_title}</h3>
                 <p className="text-xs text-gray-500 mt-auto">
                   {item.category_name_bangla || "Category"}
                 </p>

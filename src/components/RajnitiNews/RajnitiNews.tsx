@@ -38,12 +38,20 @@ const RajnitiNews: React.FC<CategoryNewsProps> = ({ items }) => {
               {firstRow?.[0]?.category_name_bangla || "অন্যান্য সংবাদ"}
             </h1>
             <div className="flex-1 border-t border-gray-300"></div>
+            <a
+              href={`/${firstRow?.[0]?.category_name || ""}/${
+                items?.[0]?.id || ""
+              }`}
+              className="text-primary font-semibold hover:underline"
+            >
+              আরও দেখুন
+            </a>
           </div>
           <div className="grid grid-cols-12 gap-6">
             {firstRow.map((item) => (
               <Link
                 key={item.id}
-                href={`/category/${item.category_id}/news/${item.id}`}
+                href={`/${item.category_name}/${item.category_id}/news/${item.id}`}
                 className="col-span-6 group flex flex-col"
               >
                 <div className="relative w-full h-96 overflow-hidden">
@@ -73,7 +81,7 @@ const RajnitiNews: React.FC<CategoryNewsProps> = ({ items }) => {
             {secondRow.map((item) => (
               <Link
                 key={item.id}
-                href={`/category/${item.category_id}/news/${item.id}`}
+                href={`/${item.category_name}/${item.category_id}/news/${item.id}`}
                 className="flex flex-col col-span-2 group border-r-1 border-blue-200 last:border-r-0 pe-5"
               >
                 <div className="relative w-full h-40 overflow-hidden">

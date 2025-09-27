@@ -23,7 +23,7 @@ const BreakingNews: React.FC<CategoryNewsProps> = ({ items }) => {
             {breakingNewsItems.map((item) => (
               <Link
                 key={item.id}
-                href={`/category/${item.category_id}/news/${item.id}`}
+                href={`/${item.category_name}/${item.category_id}/news/${item.id}`}
                 className="group flex flex-col overflow-hidden bg-transparent border border-gray-200"
               >
                 {/* Image */}

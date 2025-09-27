@@ -54,7 +54,9 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ item }) => {
         <div className="md:col-span-9">
           <div className="flex items-center mb-2 mt-5">
             <h1 className="text-xl text-gray-600 flex items-center underline line-clamp-2">
-              <Link href="/">{item?.category_name_bangla}</Link>
+              <Link href={`/${item.category_name}/${item.id}`}>
+                {item?.category_name_bangla}
+              </Link>
             </h1>
           </div>
           {/* Title */}
@@ -107,9 +109,7 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ item }) => {
               alt={item?.news_title}
               className="w-full h-auto mb-4"
             />
-            <p className="text-sm text-gray-500 text-center">
-              ছবি: আজকাল
-            </p>
+            <p className="text-sm text-gray-500 text-center">ছবি: আজকাল</p>
           </div>
           {/* Author & Font Size Icons */}
           <FontSizeController

@@ -35,7 +35,7 @@ const SpotLightNews: React.FC<CategoryNewsProps> = ({ items }) => {
           {spotLightNewsItems.map((item) => (
             <Link
               key={item.id}
-              href={`/category/${item.category_id}/news/${item.id}`}
+              href={`/${item.category_name}/${item.category_id}/news/${item.id}`}
               className="group flex flex-col overflow-hidden bg-transparent border-r-1 border-orange-200 last:border-r-0 pe-2"
             >
               {/* Image */}

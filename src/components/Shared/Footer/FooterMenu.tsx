@@ -22,7 +22,7 @@ const FooterMenu: React.FC<CategoryNewsProps> = ({ items }) => {
           {col1.map((cat) => (
             <li key={cat.id}>
               <Link
-                href={`/category/${cat.id}`}
+                href={`/${cat.name}/${cat.id}`}
                 className="text-lg hover:underline"
               >
                 {cat.name_bangla}
@@ -38,7 +38,7 @@ const FooterMenu: React.FC<CategoryNewsProps> = ({ items }) => {
           {col2.map((cat) => (
             <li key={cat.id}>
               <Link
-                href={`/category/${cat.id}`}
+                href={`/${cat.name}/${cat.id}`}
                 className="text-lg hover:underline"
               >
                 {cat.name_bangla}
@@ -54,7 +54,7 @@ const FooterMenu: React.FC<CategoryNewsProps> = ({ items }) => {
           {col3.map((cat) => (
             <li key={cat.id}>
               <Link
-                href={`/category/${cat.id}`}
+                href={`/${cat.name}/${cat.id}`}
                 className="text-lg hover:underline"
               >
                 {cat.name_bangla}
@@ -68,7 +68,7 @@ const FooterMenu: React.FC<CategoryNewsProps> = ({ items }) => {
       <div>
         <ul className="space-y-2">
           <li>
-            <Link href="/about" className="text-lg hover:underline">
+            <Link href="about" className="text-lg hover:underline">
               আমাদের সম্পর্কে
             </Link>
           </li>
@@ -78,7 +78,7 @@ const FooterMenu: React.FC<CategoryNewsProps> = ({ items }) => {
             </Link>
           </li>
           <li>
-            <Link href="/privacy-policy" className="text-lg hover:underline">
+            <Link href="/privacy" className="text-lg hover:underline">
               গোপনীয়তা নীতি
             </Link>
           </li>

@@ -23,7 +23,7 @@ const MonstViewdNews: React.FC<CategoryNewsProps> = ({ items }) => {
         {mostViewdItems.map((item) => (
           <Link
             key={item.id}
-            href={`/category/${item.category_id}/news/${item.id}`}
+            href={`/${item.category_name}/${item.category_id}/news/${item.id}`}
             className="relative h-48 sm:h-56 lg:h-96 group overflow-hidden"
           >
             {/* Background Image */}

@@ -20,7 +20,7 @@ const RemainingNews: React.FC<CategoryNewsProps> = ({ items }) => {
       </div>
       {items.map((news) => (
         <Link
-          href={`/category/${news.category_id}/news/${news.id}`}
+          href={`/${news.category_name}/${news.category_id}/news/${news.id}`}
           key={news.id}
         >
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center border-b p-4 px-0 border-gray-300 pt-0">

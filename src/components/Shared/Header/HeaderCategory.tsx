@@ -16,7 +16,7 @@ export default async function HeaderCategory() {
           {mainCategories.map((cat) => (
             <li key={cat.id} className="menu-border pe-6 py-3">
               <Link
-                href={`/category/${cat.id}`}
+                href={`/${cat.name}/${cat.id}`}
                 className="text-white hover:text-gray-300"
               >
                 {cat.name_bangla}

@@ -42,7 +42,7 @@ const ArchiveNews: React.FC<CategoryNewsProps> = ({ items = [] }) => {
           filteredNews.map((news) => (
             <Link
               key={news.id}
-              href={`/category/${news.category_id}/news/${news.id}`}
+              href={`/${news.category_name}/${news.category_id}/news/${news.id}`}
               className="block p-4 bg-white rounded-lg transition border-b border-gray-300 last:border-b-0"
             >
               <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center p-4 px-0 pt-0 ">

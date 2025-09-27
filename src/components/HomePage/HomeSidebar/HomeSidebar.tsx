@@ -99,7 +99,7 @@ const HomeSidebar = () => {
           </div>
         </div>
       </div>
-      <div className="mt-5">
+      <div className="mt-2">
         <div className="card border border-gray-200 rounded-none">
           <div className="rounded-2">
             <h4 className="py-2 mb-0 mt-4 text-center text-black text-2xl">

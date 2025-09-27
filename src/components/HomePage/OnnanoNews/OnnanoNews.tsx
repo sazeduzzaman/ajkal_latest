@@ -29,7 +29,7 @@ const OnnanoNews: React.FC<CategoryNewsProps> = ({ items }) => {
         {/* Left Column → Big News */}
         {mainItem && (
           <Link
-            href={`/category/${mainItem.category_id}/news/${mainItem.id}`}
+            href={`/${mainItem.category_name}/${mainItem.category_id}/news/${mainItem.id}`}
             className="relative h-[350px] overflow-hidden group"
           >
             <div
@@ -62,7 +62,7 @@ const OnnanoNews: React.FC<CategoryNewsProps> = ({ items }) => {
               onMouseLeave={() => setHoveredImage(null)}
             >
               <Link
-                href={`/category/${news.category_id}/news/${news.id}`}
+                href={`/${news.category_name}/${news.category_id}/news/${news.id}`}
                 className="block text-xl text-gray-800 hover:text-primary pb-3"
               >
                 {news.news_title}

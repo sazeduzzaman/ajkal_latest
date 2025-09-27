@@ -44,7 +44,7 @@ const ExtraCategory: React.FC<ExtraCategoryProps> = ({ categories }) => {
         {categories.map((cat) => (
           <li key={cat.id}>
             <Link
-              href={`/category/${cat.id}`}
+              href={`/${cat.name}/${cat.id}`}
               onClick={() => setOpen(false)}
               className="text-black hover:bg-gray-200"
             >

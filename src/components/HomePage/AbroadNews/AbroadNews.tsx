@@ -25,7 +25,7 @@ const AbroadNews: React.FC<CategoryNewsProps> = ({ items }) => {
         {mostViewdItems.map((item) => (
           <Link
             key={item.id}
-            href={`/category/${item.category_id}/news/${item.id}`}
+            href={`/${item.category_name}/${item.category_id}/news/${item.id}`}
             className="group flex flex-col overflow-hidden bg-transparent border-r-1 border-gray-200 last:border-r-0 pe-2"
           >
             {/* Image */}
