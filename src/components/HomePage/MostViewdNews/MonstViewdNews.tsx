@@ -43,7 +43,7 @@ const MonstViewdNews: React.FC<CategoryNewsProps> = ({ items }) => {
 
             {/* Text Overlay */}
             <div className="absolute bottom-4 left-4 z-10">
-              <h3 className="text-white text-lg sm:text-xl font-bold">
+              <h3 className="text-white text-xl sm:text-md">
                 {item.news_title}
               </h3>
             </div>

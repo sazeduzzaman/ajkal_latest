@@ -56,12 +56,12 @@ const SpotLightNews: React.FC<CategoryNewsProps> = ({ items }) => {
               <div className="flex flex-col flex-1 justify-between p-3">
                 <div>
                   {/* Title */}
-                  <h3 className="text-md mb-1 text-black font-semibold">
+                  <h3 className="text-1xl font-semibold mb-1 text-black">
                     {item.news_title}
                   </h3>
 
                   {/* Short description */}
-                  <p className="text-md text-gray-700 mb-2 line-clamp-2">
+                  <p className="text-lg text-gray-700 mb-2 line-clamp-2">
                     {item.news_short_brief || ""}
                   </p>
                 </div>

@@ -10,6 +10,7 @@ import {
 } from "react-icons/md";
 import FontSizeController from "@/utils/FontSizeController/FontSizeController";
 import ShareToolbar from "@/utils/ShareToolbar/ShareToolbar";
+import CommonSidebar from "../CommonSidebar/CommonSidebar";
 
 interface NewsDetailItem {
   id: number;
@@ -46,19 +47,19 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ item }) => {
   // };
 
   return (
-    <div className="max-w-7xl mx-auto mt-5">
+    <div className="max-w-7xl mx-auto">
       {/* Category */}
-      <div className="flex items-center mb-2">
-        <h1 className="text-xl text-gray-600 flex items-center underline line-clamp-2">
-          <Link href="/">{item?.category_name_bangla}</Link>
-        </h1>
-      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-        <div className="md:col-span-8">
+        <div className="md:col-span-9">
+          <div className="flex items-center mb-2 mt-5">
+            <h1 className="text-xl text-gray-600 flex items-center underline line-clamp-2">
+              <Link href="/">{item?.category_name_bangla}</Link>
+            </h1>
+          </div>
           {/* Title */}
           <h1
-            className="text-black font-semibold my-4"
+            className="text-black my-4"
             style={{ fontSize: `${fontSize * 2.5}px`, lineHeight: 1.3 }}
           >
             {item?.news_title}
@@ -68,15 +69,12 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ item }) => {
           <div className="border-b border-gray-300 mb-4 pb-4">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
               <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-center sm:text-left">
-                <div className="w-14 h-14 rounded-full bg-red-500 flex items-center justify-center">
-                  <small className="text-white font-bold text-[10px] leading-tight">
-                    সাপ্তাহিক <br />
-                    আজকাল
-                  </small>
+                <div className="flex justify-end">
+                  <div className="w-[2px] h-12 bg-red-500"></div>
                 </div>
                 <div>
                   <span className="font-medium text-black">প্রকাশিত:</span>
-                  <p className="text-red-500 mb-0">
+                  <p className="text-red-500 mb-0 text-sm">
                     <NewsTimeShower newsTime={item.news_time} />
                   </p>
                 </div>
@@ -109,6 +107,9 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ item }) => {
               alt={item?.news_title}
               className="w-full h-auto mb-4"
             />
+            <p className="text-sm text-gray-500 text-center">
+              ছবি: সাপ্তাহিক আজকাল
+            </p>
           </div>
           {/* Author & Font Size Icons */}
           <FontSizeController
@@ -125,6 +126,11 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ item }) => {
             style={{ fontSize: `${fontSize}px`, lineHeight: 1.6 }}
             dangerouslySetInnerHTML={{ __html: item?.news_detail ?? "" }}
           />
+        </div>
+
+        {/* Sidebar */}
+        <div className="md:col-span-3">
+          <CommonSidebar showCount={1} />
         </div>
       </div>
     </div>

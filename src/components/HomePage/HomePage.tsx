@@ -12,6 +12,16 @@ import { getNewYorkNewsData } from "@/services/newYorkNewsData";
 import SportsNews from "./SportsNews";
 import { getSportsNewsData } from "@/services/sportsNewsData copy";
 import HomeSidebar from "./HomeSidebar/HomeSidebar";
+import RajnitiNews from "../RajnitiNews/RajnitiNews";
+import { getRajnitiNewsData } from "@/services/rajnitiNewsData";
+import UnitedState from "./UnitedState/UnitedState";
+import { getUnitedNewsData } from "@/services/unitedStateNewsData";
+import ComunityNews from "./ComunityNews/ComunityNews";
+import { getCommunityNewsData } from "@/services/communityNewsData";
+import OnnanoNews from "./OnnanoNews/OnnanoNews";
+import { getOnannoNewsData } from "@/services/onannoNewsData";
+import { getAbroadNewsData } from "@/services/abroadNewsData";
+import AbroadNews from "./AbroadNews/AbroadNews";
 
 export default async function HomePage() {
   const latestNewsData = await getLatestNewsData();
@@ -20,6 +30,11 @@ export default async function HomePage() {
   const breakingNewsData = await getBreakingNewsData();
   const newYorkNewsData = await getNewYorkNewsData();
   const sportsNewsData = await getSportsNewsData();
+  const rajnitiNewsData = await getRajnitiNewsData();
+  const unitedNewsData = await getUnitedNewsData();
+  const communityNewsData = await getCommunityNewsData();
+  const onannoNewsData = await getOnannoNewsData();
+  const abroadNewsData = await getAbroadNewsData();
   return (
     <div>
       <HeroSection items={latestNewsData} />
@@ -37,8 +52,20 @@ export default async function HomePage() {
           <HomeSidebar />
         </div>
       </div>
-
       <SportsNews items={sportsNewsData} />
+      <RajnitiNews items={rajnitiNewsData} />
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-12 gap-4 mt-6">
+        <div className="col-span-4">
+          <UnitedState items={unitedNewsData} />
+        </div>
+        <div className="col-span-4">
+          <ComunityNews items={communityNewsData} />
+        </div>
+        <div className="col-span-4">
+          <OnnanoNews items={onannoNewsData} />
+        </div>
+      </div>
+      <AbroadNews items={abroadNewsData} />
     </div>
   );
 }

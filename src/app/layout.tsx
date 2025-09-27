@@ -4,6 +4,8 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import Header from "@/components/Shared/Header/Header";
 import Footer from "@/components/Shared/Footer/Footer";
+import ScrollToTop from "@/utils/ScrollToTop/ScrollToTop";
+import BackToTopButton from "@/utils/ScrollToTop/BackToTopButton";
 
 // ✅ Local Bangla font setup
 const shurjo = localFont({
@@ -79,9 +81,11 @@ export default function RootLayout({
     <html lang="bn">
       <body className={`${shurjo.className} antialiased overflow-x-hidden`}>
         <Toaster position="top-center" reverseOrder={false} />
-        <Header/>
+        <ScrollToTop />
+        <Header />
         {children}
-        <Footer/>
+        <BackToTopButton />
+        <Footer />
       </body>
     </html>
   );

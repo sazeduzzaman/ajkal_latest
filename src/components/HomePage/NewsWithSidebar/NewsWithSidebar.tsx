@@ -44,7 +44,7 @@ const NewsWithSidebar: React.FC<CategoryNewsProps> = ({ items }) => {
                 />
               </div>
               <div className="flex flex-col p-3 flex-1 justify-between">
-                <h3 className="text-md mb-1 font-semibold text-black">
+                <h3 className="text-xl mb-1  text-black">
                   {item.news_title}
                 </h3>
                 <p className="text-xs text-gray-500 mt-auto">
@@ -66,14 +66,18 @@ const NewsWithSidebar: React.FC<CategoryNewsProps> = ({ items }) => {
               <div className="relative h-[calc(3*10rem+2*1rem)] w-full">
                 {/* ~3 times the side card height + gaps */}
                 <Image
-                  src={`https://ajkal.us/img/news/${item.title_img || "/images/placeholder.webp"}`}
+                  src={
+                    item.title_img
+                      ? `https://ajkal.us/img/news/${item.title_img}`
+                      : "/images/placeholder.webp"
+                  }
                   alt={item.news_title || "News"}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               <div className="flex flex-col p-3 flex-1 justify-between">
-                <h3 className="text-md mb-1 font-semibold text-black">
+                <h3 className="text-xl mb-1 text-black">
                   {item.news_title}
                 </h3>
                 <p className="text-xs text-gray-500 mt-auto">

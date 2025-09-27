@@ -43,7 +43,7 @@ const SportsNews: React.FC<CategoryNewsProps> = ({ items }) => {
                 />
               </div>
               <div className="flex flex-col p-3 flex-1 justify-between">
-                <h3 className="text-md mb-1 font-semibold text-black">
+                <h3 className="text-xl mb-1  text-black">
                   {item.news_title}
                 </h3>
                 <p className="text-xs text-gray-500 mt-auto">
@@ -76,7 +76,7 @@ const SportsNews: React.FC<CategoryNewsProps> = ({ items }) => {
                 />
               </div>
               <div className="flex flex-col p-3 flex-1 justify-between">
-                <h3 className="text-md mb-1 font-semibold text-black">
+                <h3 className="text-2xl mb-1 text-black">
                   {item.news_title}
                 </h3>
                 <p className="text-xs text-gray-500 mt-auto">
@@ -108,7 +108,7 @@ const SportsNews: React.FC<CategoryNewsProps> = ({ items }) => {
                 />
               </div>
               <div className="flex flex-col p-3 flex-1 justify-between">
-                <h3 className="text-md mb-1 font-semibold text-black">
+                <h3 className="text-xl mb-1 text-black">
                   {item.news_title}
                 </h3>
                 <p className="text-xs text-gray-500 mt-auto">

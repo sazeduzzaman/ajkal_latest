@@ -23,9 +23,9 @@ const RemainingNews: React.FC<CategoryNewsProps> = ({ items }) => {
           href={`/category/${news.category_id}/news/${news.id}`}
           key={news.id}
         >
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center border-b p-4 px-0 border-gray-300">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center border-b p-4 px-0 border-gray-300 pt-0">
             {/* Left Side - Square Image */}
-            <div className="md:col-span-4 w-100 h-50 aspect-square relative overflow-hidden">
+            <div className="md:col-span-4 w-full h-50 aspect-square relative overflow-hidden items-center flex">
               <img
                 src={
                   `https://ajkal.us/img/news/${news.title_img}` || fallbackImage
@@ -39,7 +39,7 @@ const RemainingNews: React.FC<CategoryNewsProps> = ({ items }) => {
             </div>
             {/* Right Side - Text */}
             <div className="md:col-span-8 flex flex-col justify-center h-full">
-              <h2 className="font-bold text-primary text-2xl lg:text-3xl leading-snug md:leading-tight">
+              <h2 className="text-primary text-2xl lg:text-3xl leading-snug md:leading-tight">
                 {news.news_title}
               </h2>
               <div
