@@ -6,7 +6,6 @@ const TopMenus = () => {
     { name: "বিজ্ঞাপন", href: "/advertisement" },
     { name: "ই-পেপার", href: "/epaper" },
     { name: "আর্কাইভ", href: "/archive" },
-    { name: "বিজ্ঞাপনের মূল্য", href: "/advertisement-pricing" },
   ];
 
   return (

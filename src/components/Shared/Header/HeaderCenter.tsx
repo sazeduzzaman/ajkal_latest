@@ -32,7 +32,7 @@ const HeaderCenter = () => {
             </div>
             <div>
               <Link
-                href="/epaper"
+                href="/archive"
                 className="btn btn-info bg-site border-0 text-white h-21  px-3"
               >
                 <IoIosSearch className="" size={30} />
