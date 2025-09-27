@@ -108,7 +108,7 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ item }) => {
               className="w-full h-auto mb-4"
             />
             <p className="text-sm text-gray-500 text-center">
-              ছবি: সাপ্তাহিক আজকাল
+              ছবি: আজকাল
             </p>
           </div>
           {/* Author & Font Size Icons */}

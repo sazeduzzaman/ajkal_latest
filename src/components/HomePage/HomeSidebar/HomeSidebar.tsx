@@ -11,7 +11,7 @@ const HomeSidebar = () => {
         <iframe
           width="100%"
           height="180"
-          src="https://www.youtube.com/embed/videoseries?list=UUxTvFBXVaqFs0nGr3-byl2Q"
+          src="https://www.youtube.com/embed/videoseries?list=UUgyopwrgXvCnH1w1wa8rjdQ"
           frameBorder="0"
           allowFullScreen
         ></iframe>
@@ -108,7 +108,7 @@ const HomeSidebar = () => {
             <Link href={"/epaper"}>
               <Image
                 src="/images/epaper.jpg"
-                alt="সাপ্তাহিক আজকাল || Logo"
+                alt="আজকাল || Logo"
                 width={400}
                 height={50}
                 priority

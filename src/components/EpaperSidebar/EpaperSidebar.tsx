@@ -19,7 +19,7 @@ const sidebarItems: SidebarItem[] = [
   { href: "/epaper", src: "/images/sidebar-6.jpg", alt: "Sidebar 6" },
 ];
 
-const CommonSidebar = ({ showCount = 3 }: { showCount?: number }) => {
+const EpaperSidebar = ({ showCount = 3 }: { showCount?: number }) => {
   // Slice array to show only the number you want
   const visibleItems = sidebarItems.slice(0, showCount);
   return (
@@ -118,22 +118,6 @@ const CommonSidebar = ({ showCount = 3 }: { showCount?: number }) => {
         </div>
       </div>
       <div className="mt-5">
-        <div className="card border border-gray-200 rounded-none">
-          <div className="rounded-2">
-            <h4 className="py-2 mb-0 mt-4 text-center text-black text-2xl">
-              আজকাল ই-পেপার
-            </h4>
-            <Link href={"/epaper"}>
-              <Image
-                src="/images/epaper.jpg"
-                alt="আজকাল || Logo"
-                width={400}
-                height={50}
-                priority
-              />
-            </Link>
-          </div>
-        </div>
         <div className="mt-5 space-y-3">
           {visibleItems.map((item, index) => (
             <div
@@ -157,4 +141,4 @@ const CommonSidebar = ({ showCount = 3 }: { showCount?: number }) => {
   );
 };
 
-export default CommonSidebar;
+export default EpaperSidebar;

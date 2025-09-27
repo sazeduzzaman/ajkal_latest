@@ -52,11 +52,11 @@ export default async function HomePage() {
           <HomeSidebar />
         </div>
       </div>
-      <SportsNews items={sportsNewsData} />
+      <SportsNews items={unitedNewsData} />
       <RajnitiNews items={rajnitiNewsData} />
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-12 gap-4 mt-6">
         <div className="col-span-4">
-          <UnitedState items={unitedNewsData} />
+          <UnitedState items={sportsNewsData} />
         </div>
         <div className="col-span-4">
           <ComunityNews items={communityNewsData} />

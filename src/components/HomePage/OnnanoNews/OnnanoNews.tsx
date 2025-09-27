@@ -66,22 +66,22 @@ const OnnanoNews: React.FC<CategoryNewsProps> = ({ items }) => {
                 className="block text-xl text-gray-800 hover:text-primary pb-3"
               >
                 {news.news_title}
-              </Link>
 
-              {/* Tooltip Image on Hover */}
-              {hoveredImage &&
-                hoveredImage.includes(news.title_img ?? "___") && (
-                  <div className="absolute center-full top-0 w-80 h-36 bg-gray-200 shadow-lg overflow-hidden z-50">
-                    <img
-                      src={hoveredImage}
-                      alt={news.news_title}
-                      className="object-cover w-full h-full"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).src = fallbackImage;
-                      }}
-                    />
-                  </div>
-                )}
+                {/* Tooltip Image on Hover */}
+                {hoveredImage &&
+                  hoveredImage.includes(news.title_img ?? "___") && (
+                    <div className="absolute center-full top-0 w-80 h-36 bg-gray-200 shadow-lg overflow-hidden z-50">
+                      <img
+                        src={hoveredImage}
+                        alt={news.news_title}
+                        className="object-cover w-full h-full"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src = fallbackImage;
+                        }}
+                      />
+                    </div>
+                  )}
+              </Link>
             </div>
           ))}
         </div>

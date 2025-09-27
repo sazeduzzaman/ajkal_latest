@@ -12,7 +12,7 @@ const HeaderCenter = () => {
             <Link href="/">
               <Image
                 src="/images/logo_red.webp"
-                alt="সাপ্তাহিক আজকাল || Logo"
+                alt="আজকাল || Logo"
                 width={260}
                 height={50}
                 priority

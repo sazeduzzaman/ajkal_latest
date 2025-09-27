@@ -40,3 +40,11 @@ export interface NewsItem {
   subCategory_bangla_name?: string;
   category_name_bangla?: string;
 }
+export interface EpaperNewsItem {
+  id?: number;
+  name?: string;
+  epaper_date?: string;
+  epaper_image?: string;
+  page_number?: number;
+  status?: number;
+}

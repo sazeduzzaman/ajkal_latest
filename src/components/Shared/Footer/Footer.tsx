@@ -2,8 +2,11 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import SocialMedia from "@/components/SocialMedia/SocialMedia";
+import FooterMenu from "./FooterMenu";
+import { getCategories } from "@/services/categoryData";
 
-const Footer = () => {
+export default async function Footer() {
+  const categories = await getCategories();
   const currentYearBangla = new Date()
     .getFullYear()
     .toString()
@@ -16,7 +19,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto text-center">
           <Image
             src="/images/logo_red.webp"
-            alt="সাপ্তাহিক আজকাল || Logo"
+            alt="আজকাল || Logo"
             width={200}
             height={50}
             priority
@@ -26,143 +29,31 @@ const Footer = () => {
       </div>
 
       {/* Main Footer Grid */}
-      <div className="max-w-7xl mx-auto py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
-        {/* Column 1 */}
-        <div>
-          <ul className="space-y-2">
-            <li>
-              <Link href="/category/news" className="text-lg hover:underline">
-                সংবাদ
-              </Link>
-            </li>
-            <li>
-              <Link href="/category/sports" className="text-lg hover:underline">
-                খেলাধুলা
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/category/entertainment"
-                className="text-lg hover:underline"
-              >
-                বিনোদন
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/category/technology"
-                className="text-lg hover:underline"
-              >
-                প্রযুক্তি
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Column 2 */}
-        <div>
-          <ul className="space-y-2">
-            <li>
-              <Link href="/category/news" className="text-lg hover:underline">
-                সংবাদ
-              </Link>
-            </li>
-            <li>
-              <Link href="/category/sports" className="text-lg hover:underline">
-                খেলাধুলা
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/category/entertainment"
-                className="text-lg hover:underline"
-              >
-                বিনোদন
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/category/technology"
-                className="text-lg hover:underline"
-              >
-                প্রযুক্তি
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Column 3 */}
-        <div>
-          <ul className="space-y-2">
-            <li>
-              <Link href="/epaper" className="text-lg hover:underline">
-                ই-পেপার
-              </Link>
-            </li>
-            <li>
-              <Link href="/advertisement" className="text-lg hover:underline">
-                বিজ্ঞাপন
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/advertisement-pricing"
-                className="text-lg hover:underline"
-              >
-                বিজ্ঞাপনের মূল্য
-              </Link>
-            </li>
-            <li>
-              <Link href="/archive" className="text-lg hover:underline">
-                আর্কাইভ
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Column 4 */}
-        <div>
-          <ul className="space-y-2">
-            <li>
-              <Link href="/about" className="text-lg hover:underline">
-                আমাদের সম্পর্কে
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="text-lg hover:underline">
-                যোগাযোগ
-              </Link>
-            </li>
-            <li>
-              <Link href="/privacy-policy" className="text-lg hover:underline">
-                গোপনীয়তা নীতি
-              </Link>
-            </li>
-            <li>
-              <Link href="/terms" className="text-lg hover:underline">
-                শর্তাবলী
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Column 5 - App Download */}
-        <div className="flex flex-col gap-3 items-start lg:items-end">
-          <h2 className="text-2xl">ডাউনলোড করুন</h2>
-          <Image
-            src="/images/play.png"
-            alt="Play Store"
-            width={160}
-            height={160}
-            className="rounded-0"
-          />
-          <Image
-            src="/images/applestore.png"
-            alt="Apple Store"
-            width={160}
-            height={160}
-            className="rounded-0"
-          />
+      <div className="max-w-7xl mx-auto py-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-8">
+          <div className="col-span-10">
+            <FooterMenu items={categories} />
+          </div>
+          <div className="col-span-2">
+            {/* Column 5 - App Download */}
+            <div className="flex flex-col gap-3 items-start lg:items-end">
+              <h2 className="text-2xl">ডাউনলোড করুন</h2>
+              <Image
+                src="/images/play.png"
+                alt="Play Store"
+                width={160}
+                height={160}
+                className="rounded-0"
+              />
+              <Image
+                src="/images/applestore.png"
+                alt="Apple Store"
+                width={160}
+                height={160}
+                className="rounded-0"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -178,8 +69,7 @@ const Footer = () => {
           </p>
           <p>ইমেইল: ajkalnews@gmail.com , editor@ajkalusa.com</p>
           <p>
-            কপিরাইট © {currentYearBangla} সাপ্তাহিক আজকাল কর্তৃক সর্বস্বত্ব ®
-            সংরক্ষিত
+            কপিরাইট © {currentYearBangla} আজকাল কর্তৃক সর্বস্বত্ব ® সংরক্ষিত
           </p>
         </div>
 
@@ -216,6 +106,4 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

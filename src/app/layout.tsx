@@ -26,12 +26,12 @@ const shurjo = localFont({
 
 // ✅ SEO & social metadata
 export const metadata: Metadata = {
-  title: "সাপ্তাহিক আজকাল || Weekly Ajkal",
+  title: "আজকাল || Ajkal",
   description:
     "বাংলাদেশ ও বিশ্বসংবাদ সম্পর্কে সর্বশেষ আপডেট জানুন। এখানে পাবেন খেলাধুলা, রাজনীতি, চাকরি, বিনোদন, স্বাস্থ্য, লাইফস্টাইল এবং আরও অনেক কিছু।",
   keywords: [
-    "সাপ্তাহিক আজকাল",
-    "Weekly Ajkal",
+    "আজকাল",
+    "Ajkal",
     "বাংলা খবর",
     "বাংলাদেশ সংবাদ",
     "খেলাধুলা",
@@ -43,16 +43,16 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL("https://weeklyajkal.com"),
   openGraph: {
-    title: "সাপ্তাহিক আজকাল || Weekly Ajkal",
+    title: "আজকাল || Ajkal",
     description:
-      "বাংলাদেশ ও বিশ্বসংবাদ এর সর্বশেষ খবর পড়ুন সাপ্তাহিক আজকাল এ। সব সময় আপডেট থাকুন।",
+      "বাংলাদেশ ও বিশ্বসংবাদ এর সর্বশেষ খবর পড়ুন আজকাল এ। সব সময় আপডেট থাকুন।",
     url: "https://weeklyajkal.com",
-    siteName: "সাপ্তাহিক আজকাল || Weekly Ajkal",
+    siteName: "আজকাল || Ajkal",
     type: "website",
     images: [
       {
         url: "/images/og-banner.webp", // ✅ replace with real image
-        alt: "সাপ্তাহিক আজকাল || Weekly Ajkal - বাংলা সংবাদ",
+        alt: "আজকাল || Ajkal - বাংলা সংবাদ",
         width: 1200,
         height: 630,
       },
@@ -60,9 +60,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "সাপ্তাহিক আজকাল || Weekly Ajkal",
+    title: "আজকাল || Ajkal",
     description:
-      "সাপ্তাহিক আজকাল এ সর্বশেষ সংবাদ, রাজনীতি, খেলাধুলা, চাকরি ও বিনোদনের খবর পড়ুন।",
+      "আজকাল এ সর্বশেষ সংবাদ, রাজনীতি, খেলাধুলা, চাকরি ও বিনোদনের খবর পড়ুন।",
     images: ["/images/og-banner.webp"], // ✅ same image for Twitter
   },
   icons: {

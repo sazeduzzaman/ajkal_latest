@@ -66,7 +66,7 @@ const UnitedState: React.FC<CategoryNewsProps> = ({ items }) => {
                 className="block text-xl text-gray-800 hover:text-primary pb-3"
               >
                 {news.news_title}
-              </Link>
+              
 
               {/* Tooltip Image on Hover */}
               {hoveredImage &&
@@ -82,6 +82,7 @@ const UnitedState: React.FC<CategoryNewsProps> = ({ items }) => {
                     />
                   </div>
                 )}
+                </Link>
             </div>
           ))}
         </div>

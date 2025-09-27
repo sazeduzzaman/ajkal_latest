@@ -1,12 +1,8 @@
-import Epaper from '@/components/Epaper/Epaper';
-import React from 'react';
+import Epaper from "@/components/Epaper/Epaper";
+import React from "react";
 
 const page = () => {
-    return (
-        <div>
-            <Epaper />
-        </div>
-    );
+  return <Epaper />;
 };
 
 export default page;
