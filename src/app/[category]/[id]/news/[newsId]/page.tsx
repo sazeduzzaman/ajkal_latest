@@ -19,7 +19,9 @@ interface NewsDetailResponse {
 // ---------------------------
 // Helper: Fetch news detail once
 // ---------------------------
-async function fetchNewsDetail(newsId: string): Promise<NewsDetailItem | null> {
+async function fetchNewsDetail(
+  newsId: string
+): Promise<NewsDetailItem | null> {
   try {
     const res = await fetch(
       `https://backoffice.ajkal.us/news-detail/${newsId}`,
@@ -43,9 +45,9 @@ async function fetchNewsDetail(newsId: string): Promise<NewsDetailItem | null> {
 export async function generateMetadata({
   params,
 }: {
-  params: { newsId: string };
+  params: Promise<{ newsId: string }>;
 }): Promise<Metadata> {
-  const { newsId } =await params; // <-- just destructure, no await
+  const { newsId } = await params; // <-- just destructure, no await
   const news = await fetchNewsDetail(newsId);
 
   if (!news) {
@@ -80,7 +82,7 @@ export async function generateMetadata({
 export default async function NewsDetailPage({
   params,
 }: {
-  params: { newsId: string };
+  params: Promise<{ newsId: string }>;
 }) {
   const { newsId } = await params; // <-- synchronous, no await
   const news = await fetchNewsDetail(newsId);

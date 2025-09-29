@@ -5,7 +5,6 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ["control.ajkal.us"], // ✅ whitelist your image host
     remotePatterns: [
       {
         protocol: "https",
@@ -19,7 +18,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  staticPageGenerationTimeout: 120, // increase build timeout to 120s
+  staticPageGenerationTimeout: 120, // ⬅️ increase build timeout to 120s
 };
 
 export default nextConfig;

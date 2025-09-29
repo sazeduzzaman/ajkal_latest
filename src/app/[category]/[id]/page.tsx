@@ -4,7 +4,7 @@ import CategoryNews from "@/components/CategoryNews/CategoryNews";
 import { NewsItem } from "@/types/CategoryDataType";
 import CurrentTimeShower from "@/utils/CurrentTimeShower/CurrentTimeShower";
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
+export async function generateMetadata() {
   // Use static metadata to avoid extra API fetch
   // const { id } = await params;
   return {
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   };
 }
 
-export default async function Page({ params }: { params: { id: string } }) {
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
 
   // Fetch category news with caching
