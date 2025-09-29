@@ -15,15 +15,25 @@ export default async function Footer() {
   return (
     <footer className="bg-black text-white">
       {/* Top Logo */}
-      <div className="bg-site">
-        <div className="max-w-7xl mx-auto text-center">
+      <div className="bg-site ">
+        <div className="max-w-7xl mx-auto text-center hidden md:block">
           <Image
             src="/images/logo_red.webp"
             alt="আজকাল || Logo"
             width={200}
             height={50}
             priority
-            className="bg-white py-4 px-5"
+            className="bg-white py-4 px-5 "
+          />
+        </div>
+        <div className="max-w-7xl text-center block lg:hidden items-center flex justify-center">
+          <Image
+            src="/images/logo_red.webp"
+            alt="আজকাল || Logo"
+            width={200}
+            height={50}
+            priority
+            className="bg-white py-4 px-5 "
           />
         </div>
       </div>
@@ -31,12 +41,14 @@ export default async function Footer() {
       {/* Main Footer Grid */}
       <div className="max-w-7xl mx-auto py-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-8">
-          <div className="col-span-10">
+          {/* Column 1 - Footer Menu */}
+          <div className="sm:col-span-1 md:col-span-10">
             <FooterMenu items={categories} />
           </div>
-          <div className="col-span-2">
-            {/* Column 5 - App Download */}
-            <div className="flex flex-col gap-3 items-start lg:items-end">
+
+          {/* Column 2 - App Download */}
+          <div className="sm:col-span-1 md:col-span-2">
+            <div className="flex flex-col gap-3 items-center md:items-end">
               <h2 className="text-2xl">ডাউনলোড করুন</h2>
               <Image
                 src="/images/play.png"
@@ -58,7 +70,7 @@ export default async function Footer() {
       </div>
 
       {/* Publisher & Social Media */}
-      <div className="max-w-7xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
+      <div className="max-w-7xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 items-center text-center md:text-left p-3 md:p-0">
         {/* Publisher */}
         <div>
           <h2 className="text-3xl mb-5">সম্পাদক ও প্রকাশক: শাহ্‌ নেওয়াজ</h2>
@@ -74,14 +86,14 @@ export default async function Footer() {
         </div>
 
         {/* Social Media */}
-        <div className="flex flex-col items-start sm:items-end gap-3">
+        <div className="flex flex-col items-center sm:items-end md:items-start gap-3 justify-end md:justify-start">
           <p>অনুসরণ করুন</p>
           <SocialMedia />
         </div>
       </div>
 
       {/* Legal & Developed By */}
-      <div className="bg-red-500 mt-10">
+      <div className="bg-red-500 mt-10 px-4 md:px-0 text-center md:text-left">
         <div className="max-w-7xl mx-auto py-4 flex flex-col sm:flex-row justify-between items-center gap-3 text-white">
           <p className="text-sm">
             এই ওয়েবসাইটের কোনো লেখা, ছবি, অডিও, ভিডিও অনুমতি ছাড়া ব্যবহার

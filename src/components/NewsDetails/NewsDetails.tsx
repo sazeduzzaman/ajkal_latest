@@ -21,34 +21,37 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ item }) => {
   const resetFont = () => setFontSize(18);
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-0">
       {/* Category */}
-
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+        {/* Main Content */}
         <div className="md:col-span-9">
-          <div className="flex items-center mb-2 mt-5">
-            <h1 className="text-xl text-gray-600 flex items-center underline line-clamp-2">
+          {/* Category */}
+          <div className="flex flex-wrap items-center mb-2 mt-5">
+            <h2 className="text-lg sm:text-xl text-gray-600 underline line-clamp-2">
               <Link href={`/${item.category_name}/${item.id}`}>
                 {item?.category_name_bangla}
               </Link>
-            </h1>
+            </h2>
           </div>
+
           {/* Title */}
           <h1
-            className="text-black my-4"
-            style={{ fontSize: `${fontSize * 2.5}px`, lineHeight: 1.3 }}
+            className="text-black font-bold my-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight"
+            style={{ fontSize: `${fontSize * 2.2}px`, lineHeight: 1.3 }}
           >
             {item?.news_title}
           </h1>
 
           {/* Author & Time */}
           <div className="border-b border-gray-300 mb-4 pb-4">
-            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
-              <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-center sm:text-left">
-                <div className="flex justify-end">
+            <div className="flex sm:flex-row justify-between items-center sm:items-center gap-3">
+              {/* Published Time */}
+              <div className="flex flex-row sm:flex-row gap-4 items-start sm:items-center">
+                <div className="flex justify-center sm:justify-start">
                   <div className="w-[2px] h-12 bg-red-500"></div>
                 </div>
-                <div>
+                <div className="text-left sm:text-left">
                   <span className="font-medium text-black">প্রকাশিত:</span>
                   <p className="text-red-500 mb-0 text-sm">
                     <NewsTimeShower newsTime={item.news_time} />
@@ -57,11 +60,11 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ item }) => {
               </div>
 
               {/* Share */}
-              <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2 text-gray-500 text-sm">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2 text-gray-500 text-sm mt-2 sm:mt-0">
                 <ShareToolbar
                   title={item.news_title || "No Title"}
-                  slug={item.id?.toString() || "0"} // already string
-                  category={item.category_id?.toString() || "0"} // convert number to string
+                  slug={item.id?.toString() || "0"}
+                  category={item.category_id?.toString() || "0"}
                 />
               </div>
             </div>
@@ -69,40 +72,47 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ item }) => {
 
           {/* Short Brief */}
           <p
-            className="pb-4 text-black"
+            className="pb-4 text-black text-base sm:text-lg"
             style={{ fontSize: `${fontSize}px`, lineHeight: 1.5 }}
           >
             {item?.news_short_brief}
           </p>
 
           {/* Image */}
-          <div>
-            <img
-              src={`https://ajkal.us/img/news/${item?.title_img}`}
-              alt={item?.news_title}
-              className="w-full h-auto mb-4"
+          {item?.title_img && (
+            <div className="mb-4">
+              <img
+                src={`https://ajkal.us/img/news/${item?.title_img}`}
+                alt={item?.news_title}
+                className="w-full h-auto rounded-md"
+              />
+              <p className="text-sm text-gray-500 text-center mt-1">
+                ছবি: আজকাল
+              </p>
+            </div>
+          )}
+
+          {/* Font Size Controller */}
+          <div className="mb-4">
+            <FontSizeController
+              author={item?.news_author}
+              onIncrease={increaseFont}
+              onDecrease={decreaseFont}
+              onReset={resetFont}
             />
-            <p className="text-sm text-gray-500 text-center">ছবি: আজকাল</p>
           </div>
-          {/* Author & Font Size Icons */}
-          <FontSizeController
-            author={item?.news_author}
-            onIncrease={increaseFont}
-            onDecrease={decreaseFont}
-            onReset={resetFont}
-          />
 
           {/* Content */}
           <div
             ref={newsRef}
-            className="text-gray-700 mt-2"
+            className="text-gray-700 mt-2 text-base sm:text-lg"
             style={{ fontSize: `${fontSize}px`, lineHeight: 1.6 }}
             dangerouslySetInnerHTML={{ __html: item?.news_detail ?? "" }}
           />
         </div>
 
         {/* Sidebar */}
-        <div className="md:col-span-3">
+        <div className="md:col-span-3 mt-6 md:mt-0">
           <CommonSidebar showCount={1} />
         </div>
       </div>

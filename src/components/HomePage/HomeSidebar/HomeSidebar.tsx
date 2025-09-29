@@ -5,7 +5,7 @@ import React from "react";
 
 const HomeSidebar = () => {
   return (
-    <div>
+    <div className="px-4 md:px-0">
       <CommonHeader title={"বিজ্ঞাপন কর্নার"} />
       <div className="relative w-full pb-[56.25%] h-0 mt-2">
         <iframe

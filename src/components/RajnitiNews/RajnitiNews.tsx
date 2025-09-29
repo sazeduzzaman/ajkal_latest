@@ -17,7 +17,7 @@ const RajnitiNews: React.FC<CategoryNewsProps> = ({ items }) => {
   const fallbackImage = "/images/placeholder.webp";
 
   return (
-    <>
+    <div className="mx-4 md:mx-0">
       <div className="bg-blue-100 border-b-1 border-blue-300 my-6">
         <div className="flex justify-center items-center bg-gray-200 ">
           <div className="relative w-[1080px] h-[120px]">
@@ -47,7 +47,7 @@ const RajnitiNews: React.FC<CategoryNewsProps> = ({ items }) => {
               আরও দেখুন
             </a>
           </div>
-          <div className="grid grid-cols-12 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-6">
             {firstRow.map((item) => (
               <Link
                 key={item.id}
@@ -77,7 +77,7 @@ const RajnitiNews: React.FC<CategoryNewsProps> = ({ items }) => {
           </div>
           <hr className="my-6 border-t-1 border-blue-200" />
           {/* Second Row (4 items) */}
-          <div className="grid grid-cols-12 gap-6 my-6">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 my-6">
             {secondRow.map((item) => (
               <Link
                 key={item.id}
@@ -106,7 +106,7 @@ const RajnitiNews: React.FC<CategoryNewsProps> = ({ items }) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

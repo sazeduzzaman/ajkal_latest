@@ -55,12 +55,12 @@ export default async function Page({ params }: { params: Promise<{ id: string }
   }
 
   const json = await res.json();
-  const categoryName = json.data[0].category_name_bangla ?? {};
+  const categoryName = json?.data[0]?.category_name_bangla ?? {};
   const categoryItems: NewsItem[] = Array.isArray(json.data) ? json.data : [];
 
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="mt-4 mb-4 border-b border-gray-300 flex flex-col md:flex-row justify-between">
+      <div className="mt-4 mb-4 px-4 md:px-0 border-b border-gray-300 flex flex-col md:flex-row justify-between">
         <p className="font-semibold text-black text-xl">
           {categoryName ?? "অনির্ধারিত"} নিউজ
         </p>

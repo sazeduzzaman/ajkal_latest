@@ -14,7 +14,7 @@ const MonstViewdNews: React.FC<CategoryNewsProps> = ({ items }) => {
   const fallbackImage = "/images/placeholder.webp";
 
   return (
-    <div className="mt-3">
+    <div className="mt-3 px-4 md:px-0">
       <div className="flex items-center gap-3 mt-3">
         <h1 className="text-2xl font-bold text-primary">সর্বাধিক পঠিত</h1>
         <div className="flex-1 border-t border-gray-300"></div>

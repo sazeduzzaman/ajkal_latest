@@ -14,7 +14,7 @@ const NewsWithSidebar: React.FC<CategoryNewsProps> = ({ items }) => {
   const middleColumn = newsItems.slice(2, 3); // 1 item
   const fallbackImage = "/images/placeholder.webp";
   return (
-    <div>
+    <div className="px-4 md:px-0">
       <div className="flex items-center gap-3 mb-3 mt-5">
         <h1 className="text-2xl font-bold text-primary">
           {newsItems?.[0]?.category_name_bangla || "অন্যান্য সংবাদ"}
@@ -30,7 +30,7 @@ const NewsWithSidebar: React.FC<CategoryNewsProps> = ({ items }) => {
         </a>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mt-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-0 md:gap-4 mt-6">
         {/* First Column: 3 items */}
         <div className="flex flex-col gap-4 col-span-4">
           {firstColumn.map((item) => (

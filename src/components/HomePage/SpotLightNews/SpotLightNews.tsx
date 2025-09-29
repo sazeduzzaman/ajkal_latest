@@ -12,7 +12,7 @@ const SpotLightNews: React.FC<CategoryNewsProps> = ({ items }) => {
 
   const fallbackImage = "/images/placeholder.webp";
   return (
-    <div className="bg-yellow-50 border-b-1 border-orange-300">
+    <div className="bg-yellow-50 border-b-1 border-orange-300 mx-4 md:mx-0">
       <div className="flex justify-center items-center bg-gray-200 ">
         <div className="relative w-[1080px] h-[120px]">
           <Link href="/">

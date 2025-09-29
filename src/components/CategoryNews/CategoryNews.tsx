@@ -14,7 +14,7 @@ const CategoryNews: React.FC<CategoryNewsProps> = ({ items }) => {
 
   return (
     <div>
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-0">
         <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
           <div>
             <LatestCategoryNews items={latestNews} />

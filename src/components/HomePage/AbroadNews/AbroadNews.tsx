@@ -14,7 +14,7 @@ const AbroadNews: React.FC<CategoryNewsProps> = ({ items }) => {
   const fallbackImage = "/images/placeholder.webp";
 
   return (
-    <div className="mb-10">
+    <div className="mb-10 px-4 md:px-0">
       <div className="flex items-center gap-3 mb-3">
         <h1 className="text-2xl font-bold text-primary">
           {mostViewdItems?.[0]?.category_name_bangla || "অন্যান্য সংবাদ"}
@@ -34,7 +34,7 @@ const AbroadNews: React.FC<CategoryNewsProps> = ({ items }) => {
                 src={
                   item.title_img
                     ? `https://ajkal.us/img/news/${item.title_img}`
-                    : "/images/placeholder.webp"
+                    : fallbackImage
                 }
                 alt={item.news_title || "News"}
                 fill

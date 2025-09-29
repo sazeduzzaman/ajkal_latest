@@ -16,7 +16,7 @@ const ComunityNews: React.FC<CategoryNewsProps> = ({ items }) => {
   const [hoveredNewsId, setHoveredNewsId] = useState<number | null>(null);
 
   return (
-    <div>
+    <div className="px-4 md:px-0">
       {/* Section Header */}
       <div className="flex items-center gap-3 mb-3">
         <h1 className="text-2xl font-bold text-primary">

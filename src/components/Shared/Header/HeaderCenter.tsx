@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { IoIosSearch } from "react-icons/io";
+import MobileMenuButton from "./MobileMenuButton";
 
 const HeaderCenter = () => {
   return (
@@ -30,13 +31,19 @@ const HeaderCenter = () => {
                 priority
               />
             </div>
-            <div>
+            <div className="">
+              {/* Desktop Search Button */}
               <Link
                 href="/archive"
-                className="btn btn-info bg-site border-0 text-white h-21  px-3"
+                className="btn btn-info bg-site border-0 text-white h-21 px-3 hidden lg:block"
               >
-                <IoIosSearch className="" size={30} />
+                <IoIosSearch size={30} />
               </Link>
+
+              {/* Mobile Menu Button */}
+              <div className="block lg:hidden">
+                <MobileMenuButton />
+              </div>
             </div>
           </div>
         </div>

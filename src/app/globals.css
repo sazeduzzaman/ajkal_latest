@@ -105,6 +105,15 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
 }
 
+/* globals.css */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(180deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 0.3s ease-in-out;
+}
+
 /* Responsive Mobile */
 @media only screen and (max-width: 600px) {
   .mobile-none {

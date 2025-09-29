@@ -23,7 +23,7 @@ const CommonSidebar = ({ showCount = 3 }: { showCount?: number }) => {
   // Slice array to show only the number you want
   const visibleItems = sidebarItems.slice(0, showCount);
   return (
-    <div>
+    <div className="mb-4 md:mb-0">
       <CommonHeader title={"বিজ্ঞাপন কর্নার"} />
       <div className="relative w-full pb-[56.25%] h-0 mt-2">
         <iframe

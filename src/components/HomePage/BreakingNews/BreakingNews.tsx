@@ -12,7 +12,7 @@ const BreakingNews: React.FC<CategoryNewsProps> = ({ items }) => {
 
   const fallbackImage = "/images/placeholder.webp";
   return (
-    <div className="">
+    <div className="px-4 md:px-0">
       <div className="grid grid-cols-12 gap-2">
         <div className="col-span-12">
           <div className="flex items-center gap-3">

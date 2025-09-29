@@ -17,7 +17,7 @@ const HeroSection: React.FC<CategoryNewsProps> = ({ items }) => {
   const sideItems = items.slice(1, 5);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-4 px-0">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-4 px-4 md:px-0">
       {/* Left Big Card */}
       <Link
         href={`/${mainItem.category_name}/${mainItem.category_id}/news/${mainItem.id}`}
